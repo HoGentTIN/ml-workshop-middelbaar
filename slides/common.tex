@@ -1,0 +1,30 @@
+%% common.tex -- Code die in elk .tex-bestand terug komt
+
+%% Packages
+
+\usepackage{graphicx,multicol}
+\usepackage{comment,enumerate,hyperref}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[dutch]{babel}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{framed}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows,shapes,backgrounds,positioning,shadows}
+
+%% Variabelen, elk academiejaar aan te passen
+\newcommand{\academicyear}{2022--2023}
+\newcommand{\lecturers}{Stijn Lievens}
+
+%% Macro's en commando's die vaak gebruikt worden
+
+% Gauss belcurve
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
