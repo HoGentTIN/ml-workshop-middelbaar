@@ -50,6 +50,20 @@
 \section{Artifici\"ele Intelligentie}
 
 \begin{frame}
+\frametitle{Artifici\"ele Intelligentie}
+
+Waar denk jij aan bij de term Artifici\"ele Intelligentie?
+
+\vspace{1cm}
+
+\pause
+\includegraphics[width=0.3\textwidth, height=0.5\textheight]{graphics/chatgpt}
+\includegraphics[width=0.3\textwidth,height=0.5\textheight]{graphics/stable-diffusion}
+\includegraphics[width=0.3\textwidth,height=0.5\textheight]{graphics/tesla-optimus}
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Wat is Artifici\"ele Intelligentie?}
 \begin{columns}
 	\begin{column}{0.5\textwidth}
@@ -82,7 +96,7 @@ Een AI-systeem is een {\emph{computersysteem}} dat {\emph{zelfstandig leert}}, {
 en {\emph{deze uitvoert}}.
 \end{block}
 
-Bron: boek \lq\lq Mens vs.\ Machine\rq\rq door Geertrui Mieke de Ketelaere	
+Bron: boek \lq\lq Mens vs.\ Machine\rq\rq\ door Geertrui Mieke de Ketelaere.	
 \end{frame}
 
 \begin{frame}
@@ -149,6 +163,7 @@ def is_spam(email):
 \frametitle{Wat is Machinaal Leren?}
 \begin{block}{Machinaal Leren}
 \emph{Machinaal Leren} is de wetenschap (en kunst) om computers te programmeren zodanig dat ze kunnen \emph{leren van data}.
+(Hands-on Machine Learning with Scikit-Learn, Keras and Tensorflow door Aur\'elien G\'eron.)
 \end{block}
 
 \begin{block}{Machinaal Leren}
@@ -168,6 +183,7 @@ Welke toepassingen van machinaal leren ken jij?
 	\item Fraudedetectie bij creditkaarten
 	\item Aanbevelingssystemen (recommendation systems)
 	\item Spraakherkenning (bv.\ Siri, Alexa, $\ldots$)
+	\item Genereren van teksten, beelden (bv.\ ChatGPT, MidJourney)
 	\item $\ldots$
 \end{itemize}
 \end{frame}
@@ -179,7 +195,7 @@ Welke toepassingen van machinaal leren ken jij?
 \quad
 \includegraphics[width=0.4\textwidth]{graphics/beeld-segmentatie}
 \end{center}
-\tiny{Bronnen:\url{https://emerj.com/ai-sector-overviews/artificial-intelligence-at-amazon/} en  \url{https://towardsdatascience.com/image-segmentation-with-six-lines-0f-code-acb870a462e8}}
+\tiny{Bronnen: \url{https://emerj.com/ai-sector-overviews/artificial-intelligence-at-amazon/} en  \url{https://towardsdatascience.com/image-segmentation-with-six-lines-0f-code-acb870a462e8}}
 \end{frame}
 
 \begin{frame}
@@ -331,76 +347,76 @@ Een computer \lq\lq ziet\rq\rq\ een foto/afbeelding eigenlijk als niets anders d
 \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{Convoluties}
-
-Een convolutie is een bewerking waarbij een klein venster (bv.\ $3\times 3$) verschoven wordt 
-over een groter beeld. 
-
-\vspace{0.5cm}
-
-De pixels die overlappen in het grote beeld en in het kleine venster worden twee aan twee met elkaar vermenigvuldigd 
-en daarna opgeteld. Dit is dan een nieuwe \lq\lq pixel\rq\rq\ in het uitvoerbeeld.
-
-\vspace{0.5cm}
-
-%Dit klinkt ingewikkeld, maar eigenlijk is het eenvoudig! Zie Excel-bestand \texttt{vijf.xlsx}.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Convolutie: Voorbeeld}
-
-\begin{center}
-	\includegraphics[width=0.5\textwidth]{graphics/conv-1}
-\end{center}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Convolutie: 3D-Animatie}
-Zie \url{https://animatedai.github.io/}.
-\end{frame}
-
-\begin{frame}
-\frametitle{Convolutie: Python Notebook}
-Ga zelf aan de slag met de notebook \texttt{TestConvoluties.ipynb} om 
-wat extra intu\"{\i}tie op te doen m.b.t.\ convoluties.
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Convoluties: leren}
-
-\begin{itemize}
-\item Convoluties zijn niet nieuw en werden al gebruikt lang voor machine en deep learning populair waren.
-\item Traditioneel werden de convoluties \lq\lq handmatig\rq\rq\ bepaald om bepaalde zaken te detecteren
-(bv.\ horizonale of verticale randen).
-\item Binnen machine learning zijn de waarden in het venstertje \emph{parameters}\/ van het model 
-die worden bepaald (i.e.\ geleerd) door het algoritme. 
-(Dus net zoals de parametes $a$ en $b$ bij lineaire regressie.)
-\item In \'e\'en bepaalde laag zijn er typsich \emph{veel} \lq\lq venstertjes\rq\rq\ om te leren!
-\begin{itemize}
-	\item Het getransformeerde beeld krijgt dus altijd meer en meer lagen (evenveel als er venstertjes zijn).
-\end{itemize}
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Convolutionele NN: Details}
-\begin{itemize}
-\item Na het uitvoeren van de convolutie worden typisch de negatieve woorden gewoon op nul gezet 
-(en de andere blijven gewoon behouden).
-\begin{itemize}
-	\item De offici\"ele naam hiervoor is de \lq\lq Rectified Linear Unit\rq\rq\, typisch afgekort tot ReLu.
-\end{itemize}		
-\item Om het aantal parameters onder controle te houden worden de hoogte en breedte van het beeld 
-dan (typisch) gehalveerd m.b.v. een max pooling laag.
-\item Op het einde van een convolutioneel NN komen er typisch nog een aantal volledig geconnecteerde lagen, 
-met op het einde een laag die de verschillende klassen voorstellen.
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Convoluties}
+%
+%Een convolutie is een bewerking waarbij een klein venster (bv.\ $3\times 3$) verschoven wordt 
+%over een groter beeld. 
+%
+%\vspace{0.5cm}
+%
+%De pixels die overlappen in het grote beeld en in het kleine venster worden twee aan twee met elkaar vermenigvuldigd 
+%en daarna opgeteld. Dit is dan een nieuwe \lq\lq pixel\rq\rq\ in het uitvoerbeeld.
+%
+%\vspace{0.5cm}
+%
+%%Dit klinkt ingewikkeld, maar eigenlijk is het eenvoudig! Zie Excel-bestand \texttt{vijf.xlsx}.
+%
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Convolutie: Voorbeeld}
+%
+%\begin{center}
+%	\includegraphics[width=0.5\textwidth]{graphics/conv-1}
+%\end{center}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Convolutie: 3D-Animatie}
+%Zie \url{https://animatedai.github.io/}.
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Convolutie: Python Notebook}
+%Ga zelf aan de slag met de notebook \texttt{TestConvoluties.ipynb} om 
+%wat extra intu\"{\i}tie op te doen m.b.t.\ convoluties.
+%\end{frame}
+%
+%
+%\begin{frame}
+%\frametitle{Convoluties: leren}
+%
+%\begin{itemize}
+%\item Convoluties zijn niet nieuw en werden al gebruikt lang voor machine en deep learning populair waren.
+%\item Traditioneel werden de convoluties \lq\lq handmatig\rq\rq\ bepaald om bepaalde zaken te detecteren
+%(bv.\ horizonale of verticale randen).
+%\item Binnen machine learning zijn de waarden in het venstertje \emph{parameters}\/ van het model 
+%die worden bepaald (i.e.\ geleerd) door het algoritme. 
+%(Dus net zoals de parametes $a$ en $b$ bij lineaire regressie.)
+%\item In \'e\'en bepaalde laag zijn er typsich \emph{veel} \lq\lq venstertjes\rq\rq\ om te leren!
+%\begin{itemize}
+%	\item Het getransformeerde beeld krijgt dus altijd meer en meer lagen (evenveel als er venstertjes zijn).
+%\end{itemize}
+%
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Convolutionele NN: Details}
+%\begin{itemize}
+%\item Na het uitvoeren van de convolutie worden typisch de negatieve woorden gewoon op nul gezet 
+%(en de andere blijven gewoon behouden).
+%\begin{itemize}
+%	\item De offici\"ele naam hiervoor is de \lq\lq Rectified Linear Unit\rq\rq\, typisch afgekort tot ReLu.
+%\end{itemize}		
+%\item Om het aantal parameters onder controle te houden worden de hoogte en breedte van het beeld 
+%dan (typisch) gehalveerd m.b.v. een max pooling laag.
+%\item Op het einde van een convolutioneel NN komen er typisch nog een aantal volledig geconnecteerde lagen, 
+%met op het einde een laag die de verschillende klassen voorstellen.
+%\end{itemize}
+%\end{frame}
 
 
 
@@ -429,32 +445,32 @@ met op het einde een laag die de verschillende klassen voorstellen.
 
 \end{frame}
 
-\begin{frame}
-\frametitle{AlexNet: Architectuur}
-\vspace{-0.5cm}
-\begin{center}
-	\includegraphics[width=0.80\textwidth]{graphics/alexnet-architecture}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Algemene Architectuur NN}
-	
-\begin{block}{Architectuur Neuraal Netwerk}
-Een neuraal netwerk
-\begin{itemize}
-\item Bestaat uit een (groot) aantal lagen.
-\item Elke laag voert een relatief eenvoudige bewerking uit.
-\item Samen vormen de lagen een (ingewikkelde) wiskundige functie die invoer 
-op uitvoer afbeeldt.
-\end{itemize}
-\end{block}
-
-De parameters van het neuraal netwerk worden getraind met (een variant van) gradient descent
-om de \lq\lq optimale\rq\rq\ waarden van de parameters te bekomen.
-	
-
-\end{frame}
+%\begin{frame}
+%\frametitle{AlexNet: Architectuur}
+%\vspace{-0.5cm}
+%\begin{center}
+%	\includegraphics[width=0.80\textwidth]{graphics/alexnet-architecture}
+%\end{center}
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Algemene Architectuur NN}
+%	
+%\begin{block}{Architectuur Neuraal Netwerk}
+%Een neuraal netwerk
+%\begin{itemize}
+%\item Bestaat uit een (groot) aantal lagen.
+%\item Elke laag voert een relatief eenvoudige bewerking uit.
+%\item Samen vormen de lagen een (ingewikkelde) wiskundige functie die invoer 
+%op uitvoer afbeeldt.
+%\end{itemize}
+%\end{block}
+%
+%De parameters van het neuraal netwerk worden getraind met (een variant van) gradient descent
+%om de \lq\lq optimale\rq\rq\ waarden van de parameters te bekomen.
+%	
+%
+%\end{frame}
 
 
 %
@@ -537,15 +553,26 @@ om de \lq\lq optimale\rq\rq\ waarden van de parameters te bekomen.
 
 
 
+%\begin{frame}
+%\frametitle{Trainen van een ML model zonder code}
+%\begin{itemize}
+%\item  We gebruiken de \texttt{AutoTrain}-feature van Hugging Face om een hond-vs-kat classificatiemodel
+%te maken.
+%\item Dit classificatiemodel kan dan aangesproken worden over het Internet.
+%\item Merk op: dit model werd (hoogstwaarschijnlijk) getraind via \textbf{transfer learning}.
+%\end{itemize}
+%\end{frame}
+
+
 \begin{frame}
 \frametitle{Trainen van een ML model zonder code}
 \begin{itemize}
-\item  We gebruiken de \texttt{AutoTrain}-feature van Hugging Face om een hond-vs-kat classificatiemodel
-te maken.
-\item Dit classificatiemodel kan dan aangesproken worden over het Internet.
+\item  We gebruiken Google Teachable Machine om een classificatiemodel aan te maken.
+\item Dit classificatiemodel kan dan aangesproken worden in een Python notebook.
 \item Merk op: dit model werd (hoogstwaarschijnlijk) getraind via \textbf{transfer learning}.
 \end{itemize}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Transfer Learning}
@@ -562,17 +589,41 @@ dat werd getraind op ImageNet, en dat dus 1000 verschillende  klassen kan herken
 \end{frame}
 
 
+%\begin{frame}
+%\frametitle{Demo AutoTrain Hugging Face}
+%\begin{itemize}
+%\item Maak een (gratis) account op Hugging Face: \url{https://huggingface.co/}
+%\item Bedenk twee (of meer) categorie\"en die je van elkaar wil kunnen onderscheiden.
+%\item  Gebruik een zoekmachine om een aantal afbeeldingen van 
+%elke categorie te verzamelen: minstens 10 afbeeldingen in elke categorie.
+%\item Volg stappenplan bij de AutoTrain feature.
+%\item \lq\lq Deploy\rq\rq\ je model en roep het aan vanuit Python (bv.\ Google Colab) om voorspellingen 
+%te krijgen.
+%\end{itemize}
+%\end{frame}
+
+
 \begin{frame}
-\frametitle{Demo AutoTrain Hugging Face}
-\begin{itemize}
-\item Maak een (gratis) account op Hugging Face: \url{https://huggingface.co/}
-\item Bedenk twee (of meer) categorie\"en die je van elkaar wil kunnen onderscheiden.
-\item  Gebruik een zoekmachine om een aantal afbeeldingen van 
-elke categorie te verzamelen: minstens 10 afbeeldingen in elke categorie.
-\item Volg stappenplan bij de AutoTrain feature.
-\item \lq\lq Deploy\rq\rq\ je model en roep het aan vanuit Python (bv.\ Google Colab) om voorspellingen 
-te krijgen.
-\end{itemize}
+\frametitle{Maak het hond/wolf model beter}
+
+\begin{enumerate}
+\item Zoek extra trainingsafbeeldingen om het hond/wolf model beter te maken.
+\item Kan je het model aan de praat krijgen in een Python notebook?
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maak je eigen model!}
+
+\begin{enumerate}
+\item Bedenk een leuk classificatieprobleem op basis van afbeeldingen.
+\item Verzamel op het internet afbeeldingen van de verschillende klassen.
+\item Train een model met Google Teachable Machine (\url{https://teachablemachine.withgoogle.com/})
+\item Sla het model op met Tensorflow.
+\item Gebruik Google Colab om m.b.v.\ code je model aan te roepen op (nieuwe) afbeeldingen.
+\end{enumerate}
 \end{frame}
 
 %\section{Generatieve Modellen}
